@@ -1,5 +1,7 @@
 echo "Welcome to Sorting Arithmetic Computation Problem"
 
+echo "Welcome to Sorting Arithmetic Computation Problem"
+
 read -p "Enter first number: " a
 read -p "Enter second number: " b
 read -p "Enter third number: " c
@@ -18,14 +20,18 @@ fourthCompute=$(( $a % $b + $c ))
 echo "$a % $b + $c = $fourthCompute"
 
 declare -A dictionary
+declare -a array
 
+count=0
 
 dictionary[firstCompute]=$firstCompute
 dictionary[secondCompute]=$secondCompute
 dictionary[thirdCompute]=$thirdCompute
 dictionary[fourthCompute]=$fourthCompute
 
-for computation in ${!dictionary[@]}
-do
-	echo "dictionary[$computation] = ${dictionary[$computation]}"
-done
+array[count++]=${dictionary[firstCompute]}
+array[count++]=${dictionary[secondCompute]}
+array[count++]=${dictionary[thirdCompute]}
+array[count++]=${dictionary[fourthCompute]}
+
+echo "The array will be: ${array[@]}"
